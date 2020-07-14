@@ -12,7 +12,8 @@ public class arrays{
         // diffOfArrays();
         // maxInArray();
         // prefixSumArray();
-        milkman();
+        // milkman();
+        // singleNumber();
     }
 
     public static void span(){
@@ -303,6 +304,22 @@ public class arrays{
         }
         System.out.println(sum);
 
+    }
+
+    public static void singleNumber(){ //leetcode 136
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+
+        int[] arr = new int[n];
+        for(int i=0;i<arr.length;i++){
+            arr[i] = scn.nextInt();
+        }
+
+        int x = 0;
+        for(int i=0;i<arr.length;i++){
+            x = x^arr[i];
+        }
+        System.out.println(x);
     }
 
 }
