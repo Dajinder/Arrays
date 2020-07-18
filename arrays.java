@@ -14,6 +14,7 @@ public class arrays{
         // prefixSumArray();
         // milkman();
         // singleNumber();
+        // xorOperation(5, 0); 
     }
 
     public static void span(){
@@ -321,5 +322,18 @@ public class arrays{
         }
         System.out.println(x);
     }
+
+    public static void xorOperation(int n, int start) { //leetcode
+        
+        int[] arr = new int[n];
+        for(int i=0;i<arr.length;i++){
+            arr[i] = start + 2*i;
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+
+
 
 }
