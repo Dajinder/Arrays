@@ -11,10 +11,27 @@ public class arrays{
         // sumOfArrays();
         // diffOfArrays();
         // maxInArray();
+
+            // int[] arr = {10,20,30,40,50};
+            // reverseArray(arr);
+
+        // int[] arr = {1,2,3,4,5};
+        // subArrayOfArray(arr);
+
+        // subsetOfArray();
+
+
+        // int[]arr = {10,20,30,40,50,60,70,80,90,100};
+        // int data = 110;
+        // binarysearchAlgo(arr, data);
+
         // prefixSumArray();
         // milkman();
         // singleNumber();
         // xorOperation(5, 0); 
+
+
+        
     }
 
     public static void span(){
@@ -225,6 +242,74 @@ public class arrays{
         System.out.println(idx);
     }
 
+    public static void reverseArray(int[] arr){
+        for(int i=0,j=arr.length-1;i<j;i++,j--){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+
+    public static void subArrayOfArray(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            for(int j=i;j<arr.length;j++){
+                for(int k=i;k<=j;k++){
+                    System.out.print(arr[k]+" ");
+                }
+                System.out.println();    
+            }
+        }
+    }
+
+    public static void subsetOfArray(){
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i<arr.length;i++){
+            arr[i] = scn.nextInt();
+        }
+
+        int limit = (int)Math.pow(2,arr.length);
+
+        for(int i=0;i<limit;i++){
+            String set = "";
+            int temp = i;
+            for(int j=arr.length-1;j>=0;j--){
+                int r = temp%2;
+                temp = temp/2;
+
+                if(r==0){
+                    set = "-" + "\t" + set;
+                }else{
+                    set = arr[j]+ "\t" +set;
+                }
+            }
+            System.out.println(set);
+        }
+    }
+
+    public static void binarysearchAlgo(int[] arr, int data){
+        int low = 0;
+        int high = arr.length-1;
+        
+        while(low<=high){
+            int mid = (low+high)/2;
+            if(data<arr[mid]){
+                high = mid-1;   
+            }
+            else if(data>arr[mid]){
+                low = mid+1;
+            }else {
+                System.out.println(mid);
+                return;
+            }
+            
+        }
+        System.out.println(-1);
+    }
 
     public static void prefixSumArray(){
         Scanner scn = new Scanner(System.in);
@@ -333,7 +418,4 @@ public class arrays{
             System.out.println(arr[i]);
         }
     }
-
-
-
 }
