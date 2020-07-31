@@ -19,7 +19,9 @@ public class arrays{
         // subArrayOfArray(arr);
 
         // subsetOfArray();
-
+        int[] arr = {10,20,30,40,50,60,70,80,90,100};
+        int data = 61;
+        ceilFloor(arr, data);
 
         // int[]arr = {10,20,30,40,50,60,70,80,90,100};
         // int data = 110;
@@ -309,6 +311,29 @@ public class arrays{
             
         }
         System.out.println(-1);
+    }
+
+    public static void ceilFloor(int[] arr, int data){
+        int low = 0;
+        int high = arr.length-1;
+        int floor = (int)-1e8;
+        int ceil = (int)1e8;
+
+        while(low<=high){
+            int mid = (low + high)/2;
+            if(data < arr[mid]){
+                high = mid-1;
+                ceil = arr[mid];
+            }else if(data>arr[mid]){
+                low = mid+1;
+                floor = arr[mid];
+            }else{
+                ceil = arr[mid];
+                floor = arr[mid];
+                break;
+            }
+        }
+        System.out.println("floor = " + floor + "\n" + "ceil = " + ceil);
     }
 
     public static void prefixSumArray(){
