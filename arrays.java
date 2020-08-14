@@ -19,9 +19,9 @@ public class arrays{
         // subArrayOfArray(arr);
 
         // subsetOfArray();
-        int[] arr = {10,20,30,40,50,60,70,80,90,100};
-        int data = 61;
-        ceilFloor(arr, data);
+        // int[] arr = {10,20,30,40,50,60,70,80,90,100};
+        // int data = 61;
+        // ceilFloor(arr, data);
 
         // int[]arr = {10,20,30,40,50,60,70,80,90,100};
         // int data = 110;
@@ -336,6 +336,7 @@ public class arrays{
         System.out.println("floor = " + floor + "\n" + "ceil = " + ceil);
     }
 
+
     public static void prefixSumArray(){
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
@@ -356,7 +357,7 @@ public class arrays{
 
     }
 
-    public static void milkman(){
+    public static void milkman(){ //NCET test problem
         
         Scanner scn = new Scanner(System.in);
         int [] arr = new int[7];
